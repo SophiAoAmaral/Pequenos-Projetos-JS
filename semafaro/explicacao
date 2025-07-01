@@ -1,0 +1,14 @@
+Esse código cria o funcionamento de um semáforo interativo, onde os botões controlam as luzes do semáforo, podendo ligar o vermelho, amarelo, verde ou deixar ele no modo automático, alternando as cores sozinho a cada segundo.
+
+Primeiramente, o código seleciona a imagem do semáforo com document.querySelector('#img') e o container dos botões com document.getElementById('buttons'). Também são declaradas duas variáveis: colorIndex, que controla qual cor está ativa (0 para vermelho, 1 para amarelo, 2 para verde), e intervalID, que armazena o identificador do intervalo do modo automático, permitindo parar esse modo quando necessário.
+
+A função trafficLight é o ouvinte dos eventos de clique. Quando algum botão é clicado, ela chama stopAutomatic() para garantir que o modo automático pare (caso esteja ativo) e em seguida executa a função correspondente ao botão clicado, usando o objeto turnOn. O botão deve ter o id igual ao nome da cor ou automatic.
+
+Dentro do objeto turnOn, cada cor possui uma função que troca a imagem exibida para a respectiva cor do semáforo. No caso do modo automatic, ele cria um setInterval que chama a função changeColor a cada 1000 milissegundos (1 segundo). Esse intervalo fica armazenado em intervalID, o que permite que ele seja interrompido depois.
+
+A função changeColor alterna as cores do semáforo de forma cíclica. Ela usa um array colores contendo as três cores e define a cor atual com base no índice colorIndex. Após mudar a cor, chama a função nextIndex, que incrementa o índice até 2 e depois volta para 0, criando o ciclo.
+
+A função stopAutomatic usa clearInterval(intervalID) para parar o intervalo ativo, impedindo que o semáforo continue mudando automaticamente quando o usuário clicar em outro botão.
+
+Por fim, o código adiciona um addEventListener no container dos botões. Quando o usuário clica em qualquer botão dentro do container, a função trafficLight é chamada, controlando o semáforo conforme o botão clicado.
+
