@@ -1,0 +1,12 @@
+nesse projeto comecei criando o html inicial com os elementso que eu precisaria para manipular o javascript
+
+criei 4 buttons com ids um para adicionar a lamp ligada , desligada, quebrada, e para concertar 
+
+
+adicionei eles a uma variavel, dei alguns eventos para eles
+para ligar, desligar , quebrar  e concertar adicionei eventos clicks com funçoes que quando executadas trocam o conteudo.
+tbm criei uma de verificacao que quando o elemento estiver quebrado nenhum dos outros funciona apenas o concertar e para a verificacao nas functions cloquei if (!) o ! faz a negaçao com isso se nao for o resultado q passei na verificacao de quebrado ele muda 
+
+tbm criei eventos de mouse um para quando sair da imagem e outro p quando entrar
+
+e um double click para quebrar a imagem qyando clicar nela
